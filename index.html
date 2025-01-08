@@ -3,58 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Portfolio</title>
+  <title>My Projects</title>
   <style>
-    .project-container {
+    .project {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       margin: 20px;
-      gap: 20px;
-      cursor: pointer;
     }
-    .project-container video {
-      width: 320px; /* Adjust width as needed */
-      height: 180px; /* Adjust height as needed */
-      border: 2px solid #333; /* Optional: adds border to video */
-    }
-    .project-container img {
-      width: 320px; /* Adjust image size as needed */
-      height: 180px; /* Adjust image size as needed */
-    }
-    .project-container a {
-      text-decoration: none;
-      color: black;
+    .project img, .project video {
+      margin: 10px;
+      max-width: 300px;
+      max-height: 200px;
     }
   </style>
 </head>
 <body>
-  <h1>Project Portfolio</h1>
+  <h1>My Projects</h1>
+  <ul>
+    <li class="project">
+      <a href="parsec.html">
+        <div>
+          <h3>Project 1: Parsec</h3>
+          <p>No content available for Parsec yet.</p>
+        </div>
+      </a>
+    </li>
+    
+    <li class="project">
+      <a href="robotsummer.html">
+        <div>
+          <h3>Project 2: Robot Summer</h3>
+          <video width="320" height="240" autoplay muted loop>
+            <source src="videos/titleclip.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <img src="images/robot_image.jpg" alt="Robot Summer" width="320" height="240">
+        </div>
+      </a>
+    </li>
 
-  <!-- Project 1: Parsec (No Video or Image yet) -->
-  <div class="project-container">
-    <a href="parsec.html">
-      <div>No content available for Parsec yet.</div>
-    </a>
-  </div>
-
-  <!-- Project 2: Robot Summer (Video and Image Together) -->
-  <div class="project-container">
-    <a href="robotsummer.html">
-      <video width="320" height="180" controls>
-        <source src="videos/titleclip.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <img src="images/robot_image.jpg" alt="Robot Summer Image">
-    </a>
-  </div>
-
-  <!-- Project 3: Thrust Vectoring (No Video or Image yet) -->
-  <div class="project-container">
-    <a href="thrustvect.html">
-      <div>No content available for Thrust Vectoring yet.</div>
-    </a>
-  </div>
-
+    <li class="project">
+      <a href="thrustvect.html">
+        <div>
+          <h3>Project 3: Thrust Vectoring</h3>
+          <p>No content available for Thrust Vectoring yet.</p>
+        </div>
+      </a>
+    </li>
+  </ul>
 </body>
 </html>
