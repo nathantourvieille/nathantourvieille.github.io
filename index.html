@@ -13,10 +13,14 @@
       gap: 20px;
       cursor: pointer;
     }
-    .project-container img, .project-container video {
+    .project-container video {
       width: 320px; /* Adjust width as needed */
       height: 180px; /* Adjust height as needed */
-      border: 2px solid #333; /* Optional: adds border to image/video */
+      border: 2px solid #333; /* Optional: adds border to video */
+    }
+    .project-container img {
+      width: 320px; /* Adjust image size as needed */
+      height: 180px; /* Adjust image size as needed */
     }
     .project-container a {
       text-decoration: none;
@@ -27,36 +31,28 @@
 <body>
   <h1>Project Portfolio</h1>
 
-  <!-- Project 1: Parsec -->
+  <!-- Project 1: Parsec (No Video or Image yet) -->
   <div class="project-container">
     <a href="parsec.html">
-      <video width="320" height="180" controls>
-        <source src="videos/parsec.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <img src="images/parsec_image.jpg" alt="Project 1 Image">
+      <div>No content available for Parsec yet.</div>
     </a>
   </div>
 
-  <!-- Project 2: Robot Summer (with Video and Image) -->
+  <!-- Project 2: Robot Summer (Video and Image Together) -->
   <div class="project-container">
     <a href="robotsummer.html">
       <video width="320" height="180" controls>
         <source src="videos/titleclip.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <img src="images/robot_image.jpg" alt="Project 2 Image">
+      <img src="images/robot_image.jpg" alt="Robot Summer Image">
     </a>
   </div>
 
-  <!-- Project 3: Thrust Vectoring -->
+  <!-- Project 3: Thrust Vectoring (No Video or Image yet) -->
   <div class="project-container">
     <a href="thrustvect.html">
-      <video width="320" height="180" controls>
-        <source src="videos/thrustvector.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <img src="images/thrust_image.jpg" alt="Project 3 Image">
+      <div>No content available for Thrust Vectoring yet.</div>
     </a>
   </div>
 
