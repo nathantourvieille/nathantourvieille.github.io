@@ -32,13 +32,6 @@
       border-radius: 10px;
     }
 
-    /* Style the image to maintain aspect ratio */
-    .project-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
     /* Style the content */
     .project-title {
       font-size: 18px;
@@ -52,17 +45,6 @@
       color: #bbb;
     }
 
-    /* Align the video and image side by side */
-    .media-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .media-container img {
-      max-width: 120px; /* Set the image width to prevent stretching */
-      margin-left: 10px;
-    }
   </style>
 </head>
 <body>
@@ -70,16 +52,12 @@
   <div class="project-box">
     <!-- Add an anchor tag for the link -->
     <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
-      <div class="media-container">
-        <!-- Video element -->
-        <video class="project-video" controls>
-          <source src="videos/titleclip_fast.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <!-- Video element -->
+      <video class="project-video" controls>
+        <source src="videos/practicerun.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
 
-        <!-- Image element -->
-        <img class="project-image" src="images/titlepic.jpg" alt="Project Image">
-      </div>
       <!-- Title and description -->
       <div class="project-title">Robot Summer</div>
       <div class="project-description">A detailed project about robot summer adventures and testing.</div>
