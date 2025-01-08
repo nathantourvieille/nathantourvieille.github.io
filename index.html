@@ -3,53 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Projects</title>
+  <title>Project 2: Robot Summer</title>
   <style>
-    video {
-      cursor: pointer;
-      border: 3px solid #000;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-      margin: 10px;
-    }
-
-    video:hover {
-      transform: scale(1.05);
-    }
-
-    .project {
-      display: inline-block;
-      text-align: center;
+    .project-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin: 20px;
+    }
+    .project-container img, .project-container video {
+      max-width: 45%;
+      height: auto;
+      border: 2px solid black; /* optional, adds a border around the image/video */
+    }
+    .project-container a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Projects</h1>
-
-  <!-- Project 2: Robot Summer -->
-  <div class="project">
-    <a href="robotsummer.html">
-      <video width="320" height="180" autoplay muted loop>
-        <source src="videos/titleclip.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </a>
-    <p>Project 2: Robot Summer</p>
+  <h1>Project 2: Robot Summer</h1>
+  <div class="project-container">
+    <!-- Video -->
+    <video width="320" height="240" controls>
+      <source src="videos/titleclip.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Image -->
+    <img src="images/titlepic.jpg" alt="Project 2 Image">
   </div>
-
-  <!-- Placeholder for Project 1 -->
-  <div class="project">
-    <a href="parsec.html">
-      <p>Project 1: Parsec</p>
-    </a>
-  </div>
-
-  <!-- Placeholder for Project 3 -->
-  <div class="project">
-    <a href="thrustvect.html">
-      <p>Project 3: Thrust Vectoring</p>
-    </a>
-  </div>
+  <p>
+    This is the detailed page for Project 2: Robot Summer. Here's where you describe the project in detail.
+  </p>
+  <a href="index.html">Back to Main Page</a>
 </body>
 </html>
