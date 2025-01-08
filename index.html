@@ -3,54 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Projects</title>
+  <title>Project 2: Robot Summer</title>
   <style>
-    .project {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px;
+    /* Style the container to be a clickable box */
+    .project-box {
+      display: inline-block;
+      width: 300px;
+      height: auto;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
-    .project img, .project video {
-      margin: 10px;
-      max-width: 300px;
-      max-height: 200px;
+
+    /* Add hover effect for the clickable box */
+    .project-box:hover {
+      transform: scale(1.05);
+    }
+
+    /* Style the video to be responsive */
+    .project-video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Style the image to maintain aspect ratio */
+    .project-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Style the content */
+    .project-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .project-description {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #bbb;
+    }
+
+    /* Align the video and image side by side */
+    .media-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .media-container img {
+      max-width: 120px; /* Set the image width to prevent stretching */
+      margin-left: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>My Projects</h1>
-  <ul>
-    <li class="project">
-      <a href="parsec.html">
-        <div>
-          <h3>Project 1: Parsec</h3>
-          <p>No content available for Parsec yet.</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="project">
-      <a href="robotsummer.html">
-        <div>
-          <h3>Project 2: Robot Summer</h3>
-          <video width="320" height="240" autoplay muted loop>
-            <source src="videos/titleclip_fast.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <img src="images/titlepic.jpg" alt="Robot Summer" width="320" height="240">
-        </div>
-      </a>
-    </li>
 
-    <li class="project">
-      <a href="thrustvect.html">
-        <div>
-          <h3>Project 3: Thrust Vectoring</h3>
-          <p>No content available for Thrust Vectoring yet.</p>
-        </div>
-      </a>
-    </li>
-  </ul>
+  <div class="project-box">
+    <!-- Add an anchor tag for the link -->
+    <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
+      <div class="media-container">
+        <!-- Video element -->
+        <video class="project-video" controls>
+          <source src="videos/titleclip_fast.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Image element -->
+        <img class="project-image" src="images/titlepic.jpg" alt="Project Image">
+      </div>
+      <!-- Title and description -->
+      <div class="project-title">Robot Summer</div>
+      <div class="project-description">A detailed project about robot summer adventures and testing.</div>
+    </a>
+  </div>
+
 </body>
 </html>
