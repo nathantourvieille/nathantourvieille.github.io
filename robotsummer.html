@@ -37,14 +37,23 @@
       flex-wrap: wrap;
       gap: 20px;
     }
+    .video-box {
+      border: 2px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
     video {
-      width: 45%; /* Smaller width for videos */
-      max-width: 300px; /* Maximum width limit */
+      width: 100%; /* Videos will fill their container */
+      max-width: 300px; /* Maximum width for smaller videos */
       height: auto; /* Maintain aspect ratio */
     }
-    video.landscape {
-      height: 168px; /* Adjust height for landscape video */
-      object-fit: cover; /* Crop to avoid empty space */
+    .landscape video {
+      max-width: 500px; /* Larger width for the landscape video */
+    }
+    .video-box p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
@@ -58,14 +67,23 @@
   <div class="container">
     <h1>Project 2: Robot Summer</h1>
     <div class="video-container">
-      <video autoplay muted loop controls>
-        <source src="videos/practicerun_rotated.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <video class="landscape" autoplay muted loop controls>
-        <source src="videos/ENPH253_Comp_Video (2).mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <!-- Video Box for Practicerun -->
+      <div class="video-box">
+        <video autoplay muted loop controls>
+          <source src="videos/practicerun_rotated.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Practicerun - Robot Summer</p>
+      </div>
+
+      <!-- Video Box for Comp Video -->
+      <div class="video-box landscape">
+        <video autoplay muted loop controls>
+          <source src="videos/ENPH253_Comp_Video (2).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>ENPH253 Comp Video</p>
+      </div>
     </div>
     <p>
       This is the detailed page for Project 2: Robot Summer. Here's where you describe the project in detail.
