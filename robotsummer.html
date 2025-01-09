@@ -4,16 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project 2: Robot Summer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #f4f4f4;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    .header a:hover {
+      color: #007BFF;
+    }
+    .container {
+      padding: 20px;
+    }
+    .video-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    video {
+      width: 48%;
+      max-width: 640px;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-  <h1>Project 2: Robot Summer</h1>
-  <video width="640" height="360" controls>
-    <source src="videos/practicerun_rotated.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <p>
-    This is the detailed page for Project 2: Robot Summer. Here's where you describe the project in detail.
-  </p>
-  <a href="index.html">Back to Main Page</a>
+  <!-- Header with Projects Tab -->
+  <div class="header">
+    <a href="index.html">Projects</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Project 2: Robot Summer</h1>
+    <div class="video-container">
+      <video autoplay muted controls>
+        <source src="videos/practicerun_rotated.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video autoplay muted controls>
+        <source src="videos/ENPH253_Comp_Video (2).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p>
+      This is the detailed page for Project 2: Robot Summer. Here's where you describe the project in detail.
+    </p>
+  </div>
 </body>
 </html>
