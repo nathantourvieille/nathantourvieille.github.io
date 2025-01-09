@@ -12,7 +12,7 @@
     }
     .header {
       background-color: #f4f4f4;
-      padding: 10px 20px;
+      padding: 15px 20px;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -21,7 +21,7 @@
     .header a {
       text-decoration: none;
       color: #333;
-      font-size: 18px;
+      font-size: 24px; /* Larger text for Projects tab */
       font-weight: bold;
       margin-left: 20px;
     }
@@ -38,9 +38,13 @@
       gap: 20px;
     }
     video {
-      width: 48%;
-      max-width: 640px;
-      height: auto;
+      width: 45%; /* Smaller width for videos */
+      max-width: 300px; /* Maximum width limit */
+      height: auto; /* Maintain aspect ratio */
+    }
+    video.landscape {
+      height: 168px; /* Adjust height for landscape video */
+      object-fit: cover; /* Crop to avoid empty space */
     }
   </style>
 </head>
@@ -54,11 +58,11 @@
   <div class="container">
     <h1>Project 2: Robot Summer</h1>
     <div class="video-container">
-      <video autoplay muted controls>
+      <video autoplay muted loop controls>
         <source src="videos/practicerun_rotated.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <video autoplay muted controls>
+      <video class="landscape" autoplay muted loop controls>
         <source src="videos/ENPH253_Comp_Video (2).mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
