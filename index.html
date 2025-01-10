@@ -63,7 +63,6 @@
       object-fit: cover; /* Crop to fill the container */
       border-radius: 10px;
       object-position: left bottom; /* Align video from left-bottom */
-      transform: translateY(-50px); /* Shift upward by 50px */
     }
 
     /* Style the content */
@@ -100,4 +99,41 @@
     
     <!-- Existing Project: Robot Summer -->
     <div class="project-box">
-      <a href="robotsummer.html"
+      <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/titleclip_fast.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="project-title">Robot Summer</div>
+        <div class="project-description">Robot cooking competition inspired by the game Overcooked</div>
+      </a>
+    </div>
+
+    <!-- Existing Project: Rocket -->
+    <div class="project-box">
+      <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/titlerocket.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="project-title">Rocket Launch</div>
+        <div class="project-description">Cold gas thrust vectoring rocket with 3 DOF</div>
+      </a>
+    </div>
+
+    <!-- New Project: Self-Driving -->
+    <div class="project-box">
+      <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/353.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="project-title">Self-Driving</div>
+        <div class="project-description">Autonomous self-driving car simulation</div>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
