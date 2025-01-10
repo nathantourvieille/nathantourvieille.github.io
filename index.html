@@ -2,14 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2: Robot Summer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
   <style>
+    /* Global Styles */
+    body {
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Header Style */
+    .header {
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin: 0;
+      padding: 20px 0;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Container for Projects */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
     /* Style the container to be a clickable box */
     .project-box {
       display: inline-block;
       width: 300px;
-      height: auto;
       background-color: #333;
       color: white;
       padding: 10px;
@@ -17,12 +47,13 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       text-align: center;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     /* Add hover effect for the clickable box */
     .project-box:hover {
       transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
     /* Style the video to be responsive */
@@ -34,7 +65,7 @@
 
     /* Style the content */
     .project-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       margin-top: 10px;
     }
@@ -45,23 +76,55 @@
       color: #bbb;
     }
 
+    /* Responsive Adjustments */
+    @media (max-width: 650px) {
+      .projects-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="project-box">
-    <!-- Add an anchor tag for the link -->
-    <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
-      <!-- Video element with autoplay, loop, and muted -->
-      <video class="project-video" autoplay loop muted>
-        <source src="videos/titleclip_fast.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <!-- Header Section -->
+  <div class="header">
+    <h1>My Portfolio</h1>
+  </div>
 
-      <!-- Title and description -->
-      <div class="project-title">Robot Summer</div>
-      <div class="project-description">A detailed project about robot summer adventures and testing.</div>
-    </a>
+  <!-- Projects Container -->
+  <div class="projects-container">
+    
+    <!-- Existing Project: Robot Summer -->
+    <div class="project-box">
+      <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
+        <!-- Video element with autoplay, loop, and muted -->
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/titleclip_fast.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Title and description -->
+        <div class="project-title">Robot Summer</div>
+        <div class="project-description">A detailed project about robot summer adventures and testing.</div>
+      </a>
+    </div>
+
+    <!-- New Project: Rocket -->
+    <div class="project-box">
+      <a href="rocketsummer.html" style="text-decoration: none; color: inherit;">
+        <!-- Video element with autoplay, loop, and muted -->
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/titlerocket.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Title and description -->
+        <div class="project-title">Rocket Launch</div>
+        <div class="project-description">An exciting project showcasing our rocket launch and testing phases.</div>
+      </a>
+    </div>
+
   </div>
 
 </body>
