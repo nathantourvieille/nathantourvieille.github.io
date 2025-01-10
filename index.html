@@ -56,11 +56,13 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
-    /* Style the video to be responsive */
+    /* Style the video to be cropped and responsive */
     .project-video {
       width: 100%;
-      height: auto;
+      height: 400px; /* Ensure a consistent height */
+      object-fit: cover; /* Crop to fill the container */
       border-radius: 10px;
+      object-position: 50% -100px; /* Center horizontally and crop 100px from the top */
     }
 
     /* Style the content */
@@ -98,30 +100,36 @@
     <!-- Existing Project: Robot Summer -->
     <div class="project-box">
       <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
-        <!-- Video element with autoplay, loop, and muted -->
         <video class="project-video" autoplay loop muted>
           <source src="videos/titleclip_fast.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-
-        <!-- Title and description -->
         <div class="project-title">Robot Summer</div>
         <div class="project-description">Robot cooking competition inspired by the game Overcooked</div>
       </a>
     </div>
 
-    <!-- New Project: Rocket -->
+    <!-- Existing Project: Rocket -->
     <div class="project-box">
       <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
-        <!-- Video element with autoplay, loop, and muted -->
         <video class="project-video" autoplay loop muted>
           <source src="videos/titlerocket.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-
-        <!-- Title and description -->
         <div class="project-title">Rocket Launch</div>
         <div class="project-description">Cold gas thrust vectoring rocket with 3 DOF</div>
+      </a>
+    </div>
+
+    <!-- New Project: Self-Driving -->
+    <div class="project-box">
+      <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/353.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="project-title">Self-Driving</div>
+        <div class="project-description">Autonomous self-driving car simulation</div>
       </a>
     </div>
 
