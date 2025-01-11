@@ -58,21 +58,23 @@
 
     /* Video Container for Cropping */
     .video-container {
-      width: 100%;
-      height: 400px; /* Fixed height for all videos */
-      overflow: hidden;
+      width: 100%; /* Match container width */
+      height: 400px; /* Fixed portrait height */
+      overflow: hidden; /* Hide excess content */
       border-radius: 10px;
       position: relative;
     }
 
     /* Style the video */
     .project-video {
-      width: 150%; /* Increase the width to crop the right side */
-      height: auto;
+      width: 100%; /* Ensure video width matches container */
+      height: auto; /* Maintain aspect ratio */
       position: absolute;
-      top: -25px; /* Crop 25px from the top */
-      left: 0; /* Align to the left to crop the right side */
-      object-fit: cover; /* Ensure it fills the container */
+      top: -25px; /* Crop the first 25px */
+      left: 50%; /* Center the video horizontally */
+      transform: translateX(-50%); /* Adjust for horizontal cropping */
+      min-height: 400px; /* Ensure video is tall enough for portrait */
+      object-fit: cover; /* Fill container while cropping */
     }
 
     /* Style the content */
