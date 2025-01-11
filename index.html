@@ -28,7 +28,7 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    /* Container for Projects */
+    /* Projects Container */
     .projects-container {
       display: flex;
       flex-wrap: wrap;
@@ -36,11 +36,11 @@
       gap: 20px;
     }
 
-    /* Style the container to be a clickable box */
+    /* Project Box Style */
     .project-box {
       display: inline-block;
       width: 300px;
-      height: 450px; /* Fixed height to match portrait */
+      height: 450px; /* Maintain a portrait shape */
       background-color: #333;
       color: white;
       padding: 10px;
@@ -51,40 +51,39 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Add hover effect for the clickable box */
     .project-box:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
-    /* Style the video to be cropped and responsive */
+    /* Video Styles */
     .project-video {
       width: 100%;
-      height: 100%; /* Ensures it fills the box */
+      height: calc(100% - 60px); /* Leave room for text below */
       object-fit: cover;
-      object-position: top left; /* Crop from the top-left corner */
+      border-radius: 10px;
     }
 
-    /* Specific adjustments for the self-driving video */
+    /* Specific Adjustment for Self-Driving Video */
     .selfdriving-video {
-      object-position: left bottom; /* Focus on bottom-left corner */
-      transform: translateY(-25px); /* Crop first 25px from the top */
+      object-position: left top; /* Focus on the top-left */
+      transform: translateY(-50px); /* Crop the first 50 pixels */
     }
 
-    /* Style the content */
+    /* Title and Description */
     .project-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       margin-top: 10px;
     }
 
     .project-description {
       font-size: 14px;
-      margin-top: 10px;
+      margin-top: 5px;
       color: #bbb;
     }
 
-    /* Responsive Adjustments */
+    /* Responsive Design */
     @media (max-width: 650px) {
       .projects-container {
         flex-direction: column;
@@ -95,15 +94,15 @@
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <div class="header">
     <h1>My Portfolio</h1>
   </div>
 
-  <!-- Projects Container -->
+  <!-- Projects -->
   <div class="projects-container">
     
-    <!-- Project: Robot Summer -->
+    <!-- Robot Summer -->
     <div class="project-box">
       <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
         <video class="project-video" autoplay loop muted>
@@ -115,7 +114,7 @@
       </a>
     </div>
 
-    <!-- Project: Rocket Launch -->
+    <!-- Rocket Launch -->
     <div class="project-box">
       <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
         <video class="project-video" autoplay loop muted>
@@ -127,7 +126,7 @@
       </a>
     </div>
 
-    <!-- Project: Self-Driving Car -->
+    <!-- Self-Driving Car -->
     <div class="project-box">
       <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
         <video class="project-video selfdriving-video" autoplay loop muted>
