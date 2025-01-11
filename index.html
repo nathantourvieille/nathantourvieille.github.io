@@ -56,10 +56,10 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
-    /* Video Container to Crop Top 50px */
+    /* Video Container for Cropping */
     .video-container {
       width: 100%;
-      height: 350px; /* Visible height after cropping */
+      height: 400px; /* Fixed height for all videos */
       overflow: hidden;
       border-radius: 10px;
       position: relative;
@@ -67,13 +67,12 @@
 
     /* Style the video */
     .project-video {
-      width: 100%;
+      width: 125%; /* Crop the right side by increasing width */
       height: auto;
       position: absolute;
-      top: -50px; /* Crop 50px from the top */
+      top: -25px; /* Crop 25px from the top */
       left: 0;
-      object-fit: cover; /* Crop to fill the container */
-      object-position: left bottom; /* Align video from left-bottom */
+      object-fit: cover; /* Ensure it fills the container */
     }
 
     /* Style the content */
