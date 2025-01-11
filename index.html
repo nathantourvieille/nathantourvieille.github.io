@@ -64,10 +64,15 @@
       border-radius: 10px;
     }
 
+    /* Specific styling for the rocket video */
+    .rocket-video {
+      object-position: center top; /* Shift video upward slightly */
+    }
+
     /* Specific styling for the 353.mp4 video */
     .selfdriving-video {
-      object-position: left top; /* Align to the left and top */
-      transform: scale(1.1) translateY(-30px); /* Slight zoom and crop 30px from the top */
+      object-position: left top; /* Align to left-top */
+      transform: translateY(-50px) scale(1.1); /* Crop the first 50px and slight zoom */
     }
 
     /* Style the content */
@@ -117,7 +122,7 @@
     <!-- Existing Project: Rocket -->
     <div class="project-box">
       <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
-        <video class="project-video" autoplay loop muted>
+        <video class="project-video rocket-video" autoplay loop muted>
           <source src="videos/titlerocket.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
