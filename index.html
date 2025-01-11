@@ -71,10 +71,10 @@
       height: auto; /* Maintain aspect ratio */
       position: absolute;
       top: -25px; /* Crop the first 25px */
-      left: 50%; /* Center the video horizontally */
-      transform: translateX(-50%); /* Adjust for horizontal cropping */
-      min-height: 400px; /* Ensure video is tall enough for portrait */
+      left: 0; /* Align the video to the left */
       object-fit: cover; /* Fill container while cropping */
+      object-position: left top; /* Keep the left side of the video */
+      min-height: 400px; /* Ensure video is tall enough for portrait */
     }
 
     /* Style the content */
