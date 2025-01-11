@@ -58,7 +58,7 @@
 
     /* Video Container for Cropping */
     .video-container {
-      width: 100%; /* Match container width */
+      width: 300px; /* Fixed portrait width */
       height: 400px; /* Fixed portrait height */
       overflow: hidden; /* Hide excess content */
       border-radius: 10px;
@@ -67,14 +67,11 @@
 
     /* Style the video */
     .project-video {
-      width: 100%; /* Ensure video width matches container */
-      height: auto; /* Maintain aspect ratio */
+      width: auto; /* Let width adjust automatically */
+      height: 100%; /* Ensure full height fits */
       position: absolute;
-      top: -25px; /* Crop the first 25px */
-      left: 0; /* Align the video to the left */
-      object-fit: cover; /* Fill container while cropping */
-      object-position: left top; /* Keep the left side of the video */
-      min-height: 400px; /* Ensure video is tall enough for portrait */
+      top: -30px; /* Crop the first 30 pixels */
+      left: 0; /* Keep the left side of the video visible */
     }
 
     /* Style the content */
