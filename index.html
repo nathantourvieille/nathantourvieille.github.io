@@ -39,7 +39,7 @@
     /* Style the container to be a clickable box */
     .project-box {
       display: inline-block;
-      width: 300px;
+      width: 250px; /* Smaller size */
       background-color: #333;
       color: white;
       padding: 10px;
@@ -56,34 +56,23 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
-    /* Style the video to be responsive (Robot and Rocket videos remain unchanged) */
+    /* Style the video to fit the portrait aspect ratio */
     .project-video {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
+      height: 333px; /* Maintain a consistent portrait ratio */
       object-fit: cover;
-    }
-
-    /* Self-Driving Video Cropping */
-    .video-container {
-      width: 300px; /* Fixed portrait width */
-      height: 400px; /* Fixed portrait height */
-      overflow: hidden; /* Hide excess content */
       border-radius: 10px;
-      position: relative;
     }
 
+    /* Specific styling for the 353.mp4 video */
     .selfdriving-video {
-      width: auto; /* Let width adjust automatically */
-      height: 100%; /* Ensure full height fits */
-      position: absolute;
-      top: -25px; /* Crop the first 25 pixels */
-      left: 0; /* Keep the left side of the video visible */
+      object-position: left top; /* Align to the left and top */
+      transform: scale(1.1) translateY(-30px); /* Slight zoom and crop 30px from the top */
     }
 
     /* Style the content */
     .project-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       margin-top: 10px;
     }
@@ -140,12 +129,10 @@
     <!-- New Project: Self-Driving -->
     <div class="project-box">
       <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
-        <div class="video-container">
-          <video class="selfdriving-video" autoplay loop muted>
-            <source src="videos/353.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <video class="project-video selfdriving-video" autoplay loop muted>
+          <source src="videos/353.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <div class="project-title">Self-Driving</div>
         <div class="project-description">Autonomous self-driving car simulation</div>
       </a>
