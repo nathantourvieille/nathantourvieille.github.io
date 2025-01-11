@@ -63,7 +63,11 @@
       height: 100%;
       object-fit: cover; /* Ensures the video fills the box */
       border-radius: 10px;
-      object-position: left; /* Aligns the video to the left */
+    }
+
+    /* Specific adjustment for the Rocket video */
+    .rocket-video {
+      object-position: bottom; /* Aligns the video to the bottom */
     }
 
     /* Style the content */
@@ -110,10 +114,10 @@
       </a>
     </div>
 
-    <!-- Existing Project: Rocket -->
+    <!-- Updated Rocket Project -->
     <div class="project-box">
       <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
-        <video class="project-video" autoplay loop muted>
+        <video class="project-video rocket-video" autoplay loop muted>
           <source src="videos/titlerocket.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -122,7 +126,7 @@
       </a>
     </div>
 
-    <!-- New Project: Self-Driving -->
+    <!-- Existing Project: Self-Driving -->
     <div class="project-box">
       <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
         <video class="project-video" autoplay loop muted>
