@@ -56,7 +56,15 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
-    /* Video Container for Cropping */
+    /* Style the video to be responsive (Robot and Rocket videos remain unchanged) */
+    .project-video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Self-Driving Video Cropping */
     .video-container {
       width: 300px; /* Fixed portrait width */
       height: 400px; /* Fixed portrait height */
@@ -65,12 +73,11 @@
       position: relative;
     }
 
-    /* Style the video */
-    .project-video {
+    .selfdriving-video {
       width: auto; /* Let width adjust automatically */
       height: 100%; /* Ensure full height fits */
       position: absolute;
-      top: -30px; /* Crop the first 30 pixels */
+      top: -25px; /* Crop the first 25 pixels */
       left: 0; /* Keep the left side of the video visible */
     }
 
@@ -109,12 +116,10 @@
     <!-- Existing Project: Robot Summer -->
     <div class="project-box">
       <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
-        <div class="video-container">
-          <video class="project-video" autoplay loop muted>
-            <source src="videos/titleclip_fast.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/titleclip_fast.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <div class="project-title">Robot Summer</div>
         <div class="project-description">Robot cooking competition inspired by the game Overcooked</div>
       </a>
@@ -123,12 +128,10 @@
     <!-- Existing Project: Rocket -->
     <div class="project-box">
       <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
-        <div class="video-container">
-          <video class="project-video" autoplay loop muted>
-            <source src="videos/titlerocket.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/titlerocket.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <div class="project-title">Rocket Launch</div>
         <div class="project-description">Cold gas thrust vectoring rocket with 3 DOF</div>
       </a>
@@ -138,7 +141,7 @@
     <div class="project-box">
       <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
         <div class="video-container">
-          <video class="project-video" autoplay loop muted>
+          <video class="selfdriving-video" autoplay loop muted>
             <source src="videos/353.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
