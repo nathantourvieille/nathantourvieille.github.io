@@ -67,7 +67,8 @@
     /* Specific styling for the third video */
     .selfdriving-video {
       object-position: left top; /* Align to the left-top corner */
-      transform: translateY(-50px); /* Crop the first 50px */
+      object-fit: cover; /* Ensure proper cropping */
+      height: 333px; /* Ensure the same height as other videos */
     }
 
     /* Style the content */
