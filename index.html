@@ -28,7 +28,7 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    /* Projects Container */
+    /* Container for Projects */
     .projects-container {
       display: flex;
       flex-wrap: wrap;
@@ -36,11 +36,11 @@
       gap: 20px;
     }
 
-    /* Project Box Style */
+    /* Style the container to be a clickable box */
     .project-box {
       display: inline-block;
       width: 300px;
-      height: 450px; /* Maintain a portrait shape */
+      height: 400px; /* Consistent height for all boxes */
       background-color: #333;
       color: white;
       padding: 10px;
@@ -51,39 +51,35 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* Add hover effect for the clickable box */
     .project-box:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
 
-    /* Video Styles */
+    /* Style the video to be responsive */
     .project-video {
       width: 100%;
-      height: calc(100% - 60px); /* Leave room for text below */
-      object-fit: cover;
+      height: 100%;
+      object-fit: cover; /* Ensures the video fills the box */
       border-radius: 10px;
+      object-position: left; /* Aligns the video to the left */
     }
 
-    /* Specific Adjustment for Self-Driving Video */
-    .selfdriving-video {
-      object-position: left top; /* Focus on the top-left */
-      transform: translateY(-50px); /* Crop the first 50 pixels */
-    }
-
-    /* Title and Description */
+    /* Style the content */
     .project-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       margin-top: 10px;
     }
 
     .project-description {
       font-size: 14px;
-      margin-top: 5px;
+      margin-top: 10px;
       color: #bbb;
     }
 
-    /* Responsive Design */
+    /* Responsive Adjustments */
     @media (max-width: 650px) {
       .projects-container {
         flex-direction: column;
@@ -94,15 +90,15 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header Section -->
   <div class="header">
     <h1>My Portfolio</h1>
   </div>
 
-  <!-- Projects -->
+  <!-- Projects Container -->
   <div class="projects-container">
     
-    <!-- Robot Summer -->
+    <!-- Existing Project: Robot Summer -->
     <div class="project-box">
       <a href="robotsummer.html" style="text-decoration: none; color: inherit;">
         <video class="project-video" autoplay loop muted>
@@ -114,7 +110,7 @@
       </a>
     </div>
 
-    <!-- Rocket Launch -->
+    <!-- Existing Project: Rocket -->
     <div class="project-box">
       <a href="thrustvect.html" style="text-decoration: none; color: inherit;">
         <video class="project-video" autoplay loop muted>
@@ -126,15 +122,15 @@
       </a>
     </div>
 
-    <!-- Self-Driving Car -->
+    <!-- New Project: Self-Driving -->
     <div class="project-box">
       <a href="selfdriving.html" style="text-decoration: none; color: inherit;">
-        <video class="project-video selfdriving-video" autoplay loop muted>
-          <source src="videos/353.mp4" type="video/mp4">
+        <video class="project-video" autoplay loop muted>
+          <source src="videos/cropped_353.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="project-title">Self-Driving Car</div>
-        <div class="project-description">Advanced self-driving project demonstration</div>
+        <div class="project-description">Autonomous vehicle simulation and development</div>
       </a>
     </div>
 
