@@ -64,12 +64,13 @@
       border-radius: 10px;
     }
 
-    /* Specific styling for the third video */
+    /* Specific styling for the self-driving video */
     .selfdriving-video {
-      object-position: left bottom; /* Align to the bottom-left corner */
-      object-fit: cover; /* Ensure proper cropping/zoom */
-      height: 333px; /* Ensure the same height as other videos */
-      transform: translateY(-30px); /* Adjust vertically to remove the top part */
+      object-fit: cover; /* Ensures cropping/zoom */
+      object-position: left bottom; /* Focus on the bottom-left */
+      width: 100%; /* Fit within the box */
+      height: 333px; /* Consistent height */
+      transform: translateY(-10px) scale(1.2); /* Zoom slightly and lower */
     }
 
     /* Style the content */
