@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autonomous Robot Cooking Competetion</title>
+  <title>Autonomous Robot Cooking Competition</title>
   <style>
     body {
-  background-color: #222; /* Dark gray background */
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  text-align: center;
-}
+      background-color: #222; /* Dark gray background */
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
 
     .header {
       background-color: #f4f4f4;
@@ -32,32 +32,56 @@
     .header a:hover {
       color: #007BFF;
     }
+
     .container {
       padding: 20px;
     }
-    .video-container {
+
+    .video-section {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
+      align-items: flex-start;
       gap: 20px;
+      flex-wrap: wrap;
     }
-    .video-box {
-      border: 2px solid #ccc;
-      padding: 10px;
-      text-align: center;
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      max-width: 45%;
     }
+
     video {
       width: 100%; /* Videos will fill their container */
-      max-width: 300px; /* Maximum width for smaller videos */
+      max-width: 300px; /* Maximum width for videos */
       height: auto; /* Maintain aspect ratio */
     }
+
+    .text-section {
+      text-align: left;
+      flex: 1;
+      max-width: 45%;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
     .landscape video {
       max-width: 500px; /* Larger width for the landscape video */
     }
+
     .video-box p {
       margin-top: 10px;
       font-size: 14px;
-      color: #555;
+      color: #ccc;
+    }
+
+    h1 {
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -70,34 +94,59 @@
   <!-- Main Content -->
   <div class="container">
     <h1>Project 2: Robot Summer</h1>
-    <div class="video-container">
-      <!-- Video Box for Practicerun -->
-      <div class="video-box">
+
+    <!-- Video and Description Section -->
+    <div class="video-section">
+      <!-- Video Box 1 -->
+      <div class="video-container">
         <video autoplay muted loop controls>
           <source src="videos/practicerun_rotated.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p>A practice run before the competetion</p>
+        <p>A practice run before the competition</p>
       </div>
+      <!-- Description for Video Box 1 -->
+      <div class="text-section">
+        <p>
+          Over six weeks, I designed and built two autonomous robots capable of playing a real-life version of the game *Overcooked* with my three teammates. The goal was to score points by assembling food items and delivering them to a serving area marked by a 1 kHz IR beacon. Our strategy focused on assembling burgers as quickly as possible.
+        </p>
+        <ul>
+          <li><b>Robot 1 (Ingredient Picker):</b> Navigated to ingredient areas, picked up individual ingredients, and delivered them to the cooking surface for the second robot.</li>
+          <li><b>Robot 2 (Burger Assembler):</b> Stacked ingredients in a chute to assemble burgers and dispensed them onto a plate at the serving area.</li>
+        </ul>
+      </div>
+    </div>
 
-      <!-- Video Box for Comp Video -->
-      <div class="video-box landscape">
+    <div class="video-section">
+      <!-- Video Box 2 -->
+      <div class="video-container landscape">
         <video autoplay muted loop controls>
           <source src="videos/ENPH253_Comp_Video (2).mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <p>Competetion time</p>
+        <p>Competition time</p>
+      </div>
+      <!-- Description for Video Box 2 -->
+      <div class="text-section">
+        <p>
+          On competition day, we consistently assembled two burgers in two minutes. Unfortunately, a malfunction in the semi-finals resulted in a fourth-place finish.
+        </p>
+        <h3>My Contributions</h3>
+        <p><b>Mechanical Contributions:</b></p>
+        <ul>
+          <li>Constructed the chassis from laser-cut MDF and waterjet aluminum.</li>
+          <li>Designed and 3D-printed the ingredient chute and fabricated claws using Delrin, MDF, cardboard, plastic, and sheet metal.</li>
+          <li>Utilized Onshape for design and manual tools, including a lathe and mill, for fabrication.</li>
+        </ul>
+        <p><b>Software Contributions:</b></p>
+        <ul>
+          <li>Programmed ESP-32s for control and integrated sensors for line following and station detection.</li>
+          <li>Developed alignment software to handle overshoot and tuned PID parameters for precision.</li>
+          <li>Addressed noise during startup with robust filtering techniques.</li>
+          <li>Implemented ESP-Now for inter-robot communication to coordinate tasks effectively.</li>
+        </ul>
       </div>
     </div>
-    <p>
-      Over the span of six weeks, I designed and built two autonomous robots capable of playing a real-life version of the game Overcooked along with my 3 groupmates. The objective of the competition was to score as many points as possible in two minutes by assembling food items, such as burgers, salads, and fries, each worth varying points, and delivering them to a serving area marked by a 1 kHz IR beacon. Our strategy focused on just making burgers as fast as possible.
-The robots worked in tandem, each performing a specialized role to streamline the process.
-•	Robot 1 (Ingredient Picker): Positioned in the upper region of the competition surface, this robot was responsible for navigating to ingredient areas and picking up individual ingredients. It then transported and placed these ingredients onto either the cooking or cutting surface for the second robot to retrieve.
-•	Robot 2 (Burger Assembler): This robot collected the ingredients from the cooking or cutting surface, stacking them vertically in a specially designed chute to assemble burgers efficiently. The chute was engineered to align the ingredients precisely, ensuring consistent burger construction. Once the stack was complete, the robot picked up a plate and dispensed the assembled burger onto the plate, at the serving area.
-Come competition day, we were able to assemble two burgers in two minutes consistently. Unfortunately, in the semi-finals we had a malfunction and ended up in 4th place.
-
-
-    </p>
   </div>
 </body>
 </html>
