@@ -6,7 +6,7 @@
   <title>Autonomous Robot Cooking Competition</title>
   <style>
     body {
-      background-color: #222; /* Dark gray background */
+      background-color: #222;
       color: white;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -25,7 +25,7 @@
     .header a {
       text-decoration: none;
       color: #333;
-      font-size: 24px; /* Larger text for Projects tab */
+      font-size: 24px;
       font-weight: bold;
       margin-left: 20px;
     }
@@ -37,7 +37,7 @@
       padding: 20px;
     }
 
-    .video-section {
+    .main-section {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -46,42 +46,34 @@
     }
 
     .video-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       flex: 1;
-      max-width: 45%;
+      max-width: 25%;
+      text-align: center;
     }
 
     video {
-      width: 100%; /* Videos will fill their container */
-      max-width: 300px; /* Maximum width for videos */
-      height: auto; /* Maintain aspect ratio */
+      width: 100%; /* Videos fill their container */
+      height: auto;
+      border: 2px solid #ccc;
     }
 
     .text-section {
+      flex: 1.5;
       text-align: left;
-      flex: 1;
-      max-width: 45%;
+      max-width: 50%;
     }
 
     ul {
-      text-align: left;
       padding-left: 20px;
-    }
-
-    .landscape video {
-      max-width: 500px; /* Larger width for the landscape video */
-    }
-
-    .video-box p {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #ccc;
+      text-align: left;
     }
 
     h1 {
       margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -96,7 +88,7 @@
     <h1>Project 2: Robot Summer</h1>
 
     <!-- Video and Description Section -->
-    <div class="video-section">
+    <div class="main-section">
       <!-- Video Box 1 -->
       <div class="video-container">
         <video autoplay muted loop controls>
@@ -105,29 +97,26 @@
         </video>
         <p>A practice run before the competition</p>
       </div>
-      <!-- Description for Video Box 1 -->
-      <div class="text-section">
-        <p>
-          Over six weeks, I designed and built two autonomous robots capable of playing a real-life version of the game *Overcooked* with my three teammates. The goal was to score points by assembling food items and delivering them to a serving area marked by a 1 kHz IR beacon. Our strategy focused on assembling burgers as quickly as possible.
-        </p>
-        <ul>
-          <li><b>Robot 1 (Ingredient Picker):</b> Navigated to ingredient areas, picked up individual ingredients, and delivered them to the cooking surface for the second robot.</li>
-          <li><b>Robot 2 (Burger Assembler):</b> Stacked ingredients in a chute to assemble burgers and dispensed them onto a plate at the serving area.</li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="video-section">
       <!-- Video Box 2 -->
-      <div class="video-container landscape">
+      <div class="video-container">
         <video autoplay muted loop controls>
           <source src="videos/ENPH253_Comp_Video (2).mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <p>Competition time</p>
       </div>
-      <!-- Description for Video Box 2 -->
+
+      <!-- Description Section -->
       <div class="text-section">
+        <p>
+          Over six weeks, I designed and built two autonomous robots capable of playing a real-life version of the game *Overcooked* with my three teammates. The goal was to score points by assembling food items and delivering them to a serving area marked by a 1 kHz IR beacon. Our strategy focused on assembling burgers as quickly as possible.
+        </p>
+        <h3>Robot Roles</h3>
+        <ul>
+          <li><b>Robot 1 (Ingredient Picker):</b> Navigated to ingredient areas, picked up individual ingredients, and delivered them to the cooking surface for the second robot.</li>
+          <li><b>Robot 2 (Burger Assembler):</b> Stacked ingredients in a chute to assemble burgers and dispensed them onto a plate at the serving area.</li>
+        </ul>
         <p>
           On competition day, we consistently assembled two burgers in two minutes. Unfortunately, a malfunction in the semi-finals resulted in a fourth-place finish.
         </p>
