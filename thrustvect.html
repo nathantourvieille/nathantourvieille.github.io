@@ -43,12 +43,12 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     .video-container {
       display: flex;
-      gap: 20px;
+      gap: 10px;
+      flex: 0 0 60%; /* Video container takes up 60% width */
       flex-wrap: wrap;
     }
 
@@ -56,7 +56,7 @@
       border: 2px solid #ccc;
       padding: 10px;
       text-align: center;
-      flex: 1 1 calc(50% - 20px); /* Videos take 50% width with space for gap */
+      flex: 1 1 calc(45% - 10px); /* Each video takes 45% width with space for gaps */
       box-sizing: border-box;
     }
 
@@ -66,6 +66,7 @@
     }
 
     .text-container {
+      flex: 1 1 35%; /* Text container takes up the remaining 35% width */
       max-width: 400px;
       text-align: left;
     }

@@ -3,11 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1: Parsec</title>
+  <title>Virtual Self Driving Car</title>
+  <style>
+    body {
+      background-color: #222; /* Dark gray background */
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #f4f4f4;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header a {
+      text-decoration: none;
+      color: #333;
+      font-size: 24px; /* Larger text for Projects tab */
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    .header a:hover {
+      color: #007BFF;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap; /* Ensures the layout works well on smaller screens */
+    }
+
+    .video-container {
+      display: flex;
+      gap: 10px;
+      flex: 0 0 60%; /* Video container takes up 60% width */
+      flex-wrap: wrap;
+    }
+
+    .video-box {
+      border: 2px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      flex: 1 1 calc(45% - 10px); /* Each video takes 45% width with space for gaps */
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%; /* Videos will fill their container */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .text-container {
+      flex: 1 1 35%; /* Text container takes up the remaining 35% width */
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .text-container h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .text-container ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .text-container ul li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Project 1: Parsec</h1>
-  <p>This is the detailed page for Project 1: selfdriving.</p>
-  <a href="index.html">Back to Main Page</a>
+  <!-- Header with Projects Tab -->
+  <div class="header">
+    <a href="index.html">Projects</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Virtual Self Driving Car</h1>
+    <div class="content">
+      <!-- Text Section -->
+      <div class="text-container">
+        <h2>Project Overview</h2>
+        <p>
+          This page is dedicated to the Virtual Self Driving Car project. Details about the project, including the objectives, challenges, and accomplishments, will be added as the project progresses.
+        </p>
+        <h2>Status</h2>
+        <p>In progress</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

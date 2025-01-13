@@ -43,19 +43,37 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 20px;
+      flex-wrap: wrap; /* Ensures the layout works well on smaller screens */
+    }
+
+    .video-container {
+      display: flex;
+      gap: 10px;
+      flex: 0 0 60%; /* Video container takes up 60% width */
+      flex-wrap: wrap;
+    }
+
+    .video-box {
+      border: 2px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      flex: 1 1 calc(45% - 10px); /* Each video takes 45% width with space for gaps */
+      box-sizing: border-box;
+    }
+
+    video {
+      width: 100%; /* Videos will fill their container */
+      height: auto; /* Maintain aspect ratio */
     }
 
     .text-container {
-      max-width: 600px;
+      flex: 1 1 35%; /* Text container takes up the remaining 35% width */
+      max-width: 400px;
       text-align: left;
     }
 
     .text-container h2 {
       color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .text-container p {
       margin-bottom: 10px;
     }
 
@@ -89,9 +107,6 @@
         <p>In progress</p>
       </div>
     </div>
-    <p>
-      <a href="index.html" style="color: #007BFF; text-decoration: none;">Back to Main Page</a>
-    </p>
   </div>
 </body>
 </html>
