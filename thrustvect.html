@@ -43,34 +43,26 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .video-container {
       display: flex;
-      flex-direction: column;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .video-box {
       border: 2px solid #ccc;
       padding: 10px;
       text-align: center;
+      flex: 1 1 calc(50% - 20px); /* Videos take 50% width with space for gap */
+      box-sizing: border-box;
     }
 
     video {
       width: 100%; /* Videos will fill their container */
-      max-width: 300px; /* Maximum width for smaller videos */
       height: auto; /* Maintain aspect ratio */
-    }
-
-    .landscape video {
-      max-width: 500px; /* Larger width for the landscape video */
-    }
-
-    .video-box p {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #bbb;
     }
 
     .text-container {
@@ -112,8 +104,7 @@
           </video>
           <p>Final Product</p>
         </div>
-
-        <div class="video-box landscape">
+        <div class="video-box">
           <video autoplay muted loop controls>
             <source src="videos/practicerocket.mp4" type="video/mp4">
             Your browser does not support the video tag.
