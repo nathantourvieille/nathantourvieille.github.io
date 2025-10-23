@@ -85,6 +85,58 @@
     .text-container ul li {
       margin-bottom: 10px;
     }
+
+      /* Group container for a set of images */
+    .media-box {
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      flex: 1 1 100%; /* each group spans full width inside .video-container */
+    }
+
+    /* Row that lays images side-by-side */
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    /* Image + caption pair */
+    .image-row figure {
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Default sizing for images inside a group */
+    .image-row img {
+      max-width: 22%;     /* ~4 across for the views group */
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      display: block;
+    }
+
+    /* Caption styling */
+    .image-row figcaption {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 6px;
+    }
+
+    /* Desert group: show about half size (so fewer per row, smaller thumbnails) */
+    .image-row.desert img {
+      max-width: 45%;     /* ~2 across, effectively ~half the area of the views */
+    }
+
+    /* Make images stack nicely on small screens */
+    @media (max-width: 700px) {
+      .image-row img { max-width: 48%; }
+      .image-row.desert img { max-width: 48%; }
+    }
+
   </style>
 </head>
 <body>
@@ -94,43 +146,54 @@
   </div>
 
   <!-- Main Content -->
-  <div class="content">
-    <!-- Media gallery -->
-    <div class="video-container">
-      
-      <!-- Group 1: Views -->
-      <div class="video-box">
-        <img src="images/selfdrivingImages/view1.png" alt="View 1">
-        <p>View 1 – explanation here</p>
-      </div>
-      <div class="video-box">
-        <img src="images/selfdrivingImages/view2.png" alt="View 2">
-        <p>View 2 – explanation here</p>
-      </div>
-      <div class="video-box">
-        <img src="images/selfdrivingImages/view3.png" alt="View 3">
-        <p>View 3 – explanation here</p>
-      </div>
-      <div class="video-box">
-        <img src="images/selfdrivingImages/view4.png" alt="View 4">
-        <p>View 4 – explanation here</p>
-      </div>
+  <!-- Media gallery (two grouped sets) -->
+  <div class="video-container">
 
-      <!-- Group 2: Desert -->
-      <div class="video-box">
-        <img src="images/selfdrivingImages/desert1.png" alt="Desert 1">
-        <p>Desert 1 – explanation here</p>
+    <!-- Group 1: Views -->
+    <div class="media-box">
+      <h3>Views</h3>
+      <div class="image-row">
+        <figure>
+          <img src="images/view1.png" alt="View 1">
+          <figcaption>View 1 – your note here</figcaption>
+        </figure>
+        <figure>
+          <img src="images/view2.png" alt="View 2">
+          <figcaption>View 2 – your note here</figcaption>
+        </figure>
+        <figure>
+          <img src="images/view3.png" alt="View 3">
+          <figcaption>View 3 – your note here</figcaption>
+        </figure>
+        <figure>
+          <img src="images/view4.png" alt="View 4">
+          <figcaption>View 4 – your note here</figcaption>
+        </figure>
       </div>
-      <div class="video-box">
-        <img src="images/selfdrivingImages/desert2.png" alt="Desert 2">
-        <p>Desert 2 – explanation here</p>
-      </div>
-      <div class="video-box">
-        <img src="images/selfdrivingImages/desert3.png" alt="Desert 3">
-        <p>Desert 3 – explanation here</p>
-      </div>
-
+      <p>Short caption for the whole “Views” group.</p>
     </div>
+
+    <!-- Group 2: Desert (half-scale thumbnails) -->
+    <div class="media-box">
+      <h3>Desert</h3>
+      <div class="image-row desert">
+        <figure>
+          <img src="images/desert1.png" alt="Desert 1">
+          <figcaption>Desert 1 – your note here</figcaption>
+        </figure>
+        <figure>
+          <img src="images/desert2.png" alt="Desert 2">
+          <figcaption>Desert 2 – your note here</figcaption>
+        </figure>
+        <figure>
+          <img src="images/desert3.png" alt="Desert 3">
+          <figcaption>Desert 3 – your note here</figcaption>
+        </figure>
+      </div>
+      <p>Short caption for the whole “Desert” group.</p>
+    </div>
+
+  </div>
 
     <!-- Text column -->
     <div class="text-container">
