@@ -136,45 +136,45 @@
       <div class="media-column">
 
         <div class="media-box">
-          <h3>Views</h3>
+          <h3>Sign</h3>
           <div class="image-row">
             <figure>
               <img src="images/selfdrivingImages/view1.png" alt="View 1">
-              <figcaption>View 1 – your note here</figcaption>
+              <figcaption>Top view of robot looking at sign</figcaption>
             </figure>
             <figure>
               <img src="images/selfdrivingImages/view2.png" alt="View 2">
-              <figcaption>View 2 – your note here</figcaption>
+              <figcaption>Sign from the perspective of the robot</figcaption>
             </figure>
             <figure>
               <img src="images/selfdrivingImages/view3.png" alt="View 3">
-              <figcaption>View 3 – your note here</figcaption>
+              <figcaption>Sign after perspective transform</figcaption>
             </figure>
             <figure>
               <img src="images/selfdrivingImages/view4.png" alt="View 4">
-              <figcaption>View 4 – your note here</figcaption>
+              <figcaption>Sign after dividing the into regions of interest</figcaption>
             </figure>
           </div>
-          <p>Different perspectives used for training and testing.</p>
+          <p>Steps in the sign detection and parsing pipeline before feeding into neural network</p>
         </div>
 
         <div class="media-box">
-          <h3>Desert</h3>
+          <h3>Desert Road</h3>
           <div class="image-row desert">
             <figure>
               <img src="images/selfdrivingImages/desert1.png" alt="Desert 1">
-              <figcaption>Desert 1 – your note here</figcaption>
+              <figcaption>Desert road view from the perspective of the robot</figcaption>
             </figure>
             <figure>
               <img src="images/selfdrivingImages/desert2.png" alt="Desert 2">
-              <figcaption>Desert 2 – your note here</figcaption>
+              <figcaption>Desert road view after HSV colour filtering</figcaption>
             </figure>
             <figure>
               <img src="images/selfdrivingImages/desert3.png" alt="Desert 3">
-              <figcaption>Desert 3 – your note here</figcaption>
+              <figcaption>Desert view after blob removal</figcaption>
             </figure>
           </div>
-          <p>Desert driving scenarios captured for domain testing.</p>
+          <p>Steps in the road detection pipeline before used for imitation learning</p>
         </div>
 
       </div>
@@ -183,14 +183,16 @@
       <div class="text-container">
         <h2>Project Overview</h2>
         <p>
-          asdfasdfasdf
+          The objective of this project was to design an autonomous robot that would be able to navigate a course as fast as possible while accurately reading the 
+          signs placed around various locations in the track. We communicated with the robot using ROS and the environment was in Gazebo. My partner focused on the
+          autonomous driving aspect while I took on the image processiong portion of this project
         </p>
 
-        <h2>Key Details</h2>
+        <h2>My contributions</h2>
         <ul>
-          <li>asdfasdf</li>
-          <li>asdfasdf</li>
-          <li>asdfasdf</li>
+          <li>Developed a robust pipeline to detect digns and extract the individual letters</li>
+          <li>Built a lightweight, fast and accurate neural network for character recognition</li>
+          <li>Developed a pipeline to extract only the edges of the rode whether that was on road or desert</li>
         </ul>
       </div>
     </div>
