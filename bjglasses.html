@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title</title>
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header {
+      background-color: #f4f4f4;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header a {
+      text-decoration: none;
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    .header a:hover {
+      color: #007BFF;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .main-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-container {
+      flex: 1;
+      max-width: 25%;
+      text-align: center;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+    }
+
+    .text-section {
+      flex: 1.5;
+      text-align: left;
+      max-width: 50%;
+    }
+
+    ul {
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Projects Tab -->
+  <div class="header">
+    <a href="index.html">Projects</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Project Title</h1>
+
+    <!-- Video and Description Section -->
+    <div class="main-section">
+      <!-- Video Box 1 -->
+      <div class="video-container">
+        <video autoplay muted loop controls>
+          <source src="videos/video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Video caption 1</p>
+      </div>
+
+      <!-- Video Box 2 -->
+      <div class="video-container">
+        <video autoplay muted loop controls>
+          <source src="videos/video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Video caption 2</p>
+      </div>
+
+      <!-- Description Section -->
+      <div class="text-section">
+        <p>
+          Write a short overview of the project here. Explain the purpose, context, or competition it was for.
+        </p>
+        <h3>Goals</h3>
+        <ul>
+          <li>Main goal or objective</li>
+          <li>Another key point</li>
+        </ul>
+        <h3>My Contributions</h3>
+        <p><b>Mechanical Contributions:</b></p>
+        <ul>
+          <li>Example mechanical contribution</li>
+          <li>Another mechanical task</li>
+        </ul>
+        <p><b>Software Contributions:</b></p>
+        <ul>
+          <li>Example software contribution</li>
+          <li>Another software task</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
