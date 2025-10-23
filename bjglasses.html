@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Title</title>
+  <title>New Project</title>
   <style>
     body {
       background-color: #222;
@@ -11,7 +11,6 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      text-align: center;
     }
 
     .header {
@@ -22,6 +21,7 @@
       align-items: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .header a {
       text-decoration: none;
       color: #333;
@@ -29,6 +29,7 @@
       font-weight: bold;
       margin-left: 20px;
     }
+
     .header a:hover {
       color: #007BFF;
     }
@@ -37,96 +38,78 @@
       padding: 20px;
     }
 
-    .main-section {
+    .content {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 20px;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* stack on small screens */
     }
 
-    .video-container {
-      flex: 1;
-      max-width: 25%;
-      text-align: center;
+    /* Left side: images */
+    .image-column {
+      flex: 0 0 60%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
     }
 
-    video {
+    .image-column img {
       width: 100%;
       height: auto;
       border: 2px solid #ccc;
+      border-radius: 5px;
+      display: block;
     }
 
-    .text-section {
-      flex: 1.5;
-      text-align: left;
-      max-width: 50%;
-    }
-
-    ul {
-      padding-left: 20px;
+    /* Right side: text */
+    .text-column {
+      flex: 1 1 35%;
+      max-width: 400px;
       text-align: left;
     }
 
-    h1 {
-      margin-bottom: 20px;
+    .text-column h2 {
+      margin-top: 0;
     }
 
-    p {
-      line-height: 1.6;
+    @media (max-width: 900px) {
+      .image-column, .text-column {
+        flex: 1 1 100%;
+        max-width: none;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Projects Tab -->
+  <!-- Header -->
   <div class="header">
     <a href="index.html">Projects</a>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main content -->
   <div class="container">
-    <h1>Project Title</h1>
-
-    <!-- Video and Description Section -->
-    <div class="main-section">
-      <!-- Video Box 1 -->
-      <div class="video-container">
-        <video autoplay muted loop controls>
-          <source src="videos/video1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <p>Video caption 1</p>
+    <h1>New Project Title</h1>
+    <div class="content">
+      <!-- Images -->
+      <div class="image-column">
+        <img src="images/bjglassesImages/annotation.png" alt="Placeholder 1">
+        <img src="images/bjglassesImages/RandomBJ2.png" alt="Placeholder 2">
+        <img src="images/bjglassesImages/sortedBJ1.png" alt="Placeholder 3">
       </div>
 
-      <!-- Video Box 2 -->
-      <div class="video-container">
-        <video autoplay muted loop controls>
-          <source src="videos/video2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <p>Video caption 2</p>
-      </div>
-
-      <!-- Description Section -->
-      <div class="text-section">
+      <!-- Text -->
+      <div class="text-column">
+        <h2>Overview</h2>
         <p>
-          Write a short overview of the project here. Explain the purpose, context, or competition it was for.
+          asdfasdf
         </p>
-        <h3>Goals</h3>
+
+        <h2>Key Details</h2>
         <ul>
-          <li>Main goal or objective</li>
-          <li>Another key point</li>
-        </ul>
-        <h3>My Contributions</h3>
-        <p><b>Mechanical Contributions:</b></p>
-        <ul>
-          <li>Example mechanical contribution</li>
-          <li>Another mechanical task</li>
-        </ul>
-        <p><b>Software Contributions:</b></p>
-        <ul>
-          <li>Example software contribution</li>
-          <li>Another software task</li>
+          <li>asdf</li>
+          <li>asdf</li>
+          <li>asdf</li>
         </ul>
       </div>
     </div>
