@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Project</title>
+  <title>Blackjack Glasses | Computer Vision Portfolio</title>
   <style>
     body {
-      background-color: #222;
-      color: white;
-      font-family: Arial, sans-serif;
+      background-color: #1a1a1a; /* Slightly deeper dark mode */
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      line-height: 1.6;
     }
 
+    /* Professional Navigation */
     .header {
-      background-color: #f4f4f4;
-      padding: 15px 20px;
+      background-color: #222;
+      padding: 15px 40px;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #333;
     }
 
     .header a {
       text-decoration: none;
-      color: #333;
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 20px;
+      color: #bbb;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
     .header a:hover {
@@ -35,83 +37,142 @@
     }
 
     .container {
-      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    .content {
+    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
+    h2 { font-size: 1.8rem; color: #007BFF; margin-top: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+    h3 { font-size: 1.3rem; color: #fff; margin-top: 25px; }
+
+    /* Top Section: Image Grid and Summary */
+    .hero-content {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap; /* stack on small screens */
+      gap: 30px;
+      margin-bottom: 60px;
     }
 
-    /* Left side: images */
-    .image-column {
-      flex: 0 0 60%;
+    .image-grid {
+      flex: 1.5;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 15px;
     }
 
-    .image-column img {
+    .image-grid img {
       width: 100%;
-      height: auto;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      display: block;
+      border-radius: 8px;
+      border: 1px solid #444;
+      transition: transform 0.3s;
     }
 
-    /* Right side: text */
-    .text-column {
-      flex: 1 1 35%;
-      max-width: 400px;
-      text-align: left;
+    .image-grid img:hover { transform: scale(1.02); }
+
+    .summary-text {
+      flex: 1;
+      background: #252525;
+      padding: 25px;
+      border-radius: 12px;
+      height: fit-content;
     }
 
-    .text-column h2 {
-      margin-top: 0;
+    /* Technical Breakdown Sections */
+    .tech-section {
+      margin-top: 50px;
     }
+
+    .tech-section p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    ul { padding-left: 20px; color: #ccc; }
+    li { margin-bottom: 10px; }
 
     @media (max-width: 900px) {
-      .image-column, .text-column {
-        flex: 1 1 100%;
-        max-width: none;
-      }
+      .hero-content { flex-direction: column; }
+      .image-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+
   <div class="header">
-    <a href="index.html">Projects</a>
+    <a href="index.html">← Back to Projects</a>
   </div>
 
-  <!-- Main content -->
   <div class="container">
     <h1>Blackjack Glasses</h1>
-    <div class="content">
-      <!-- Images -->
-      <div class="image-column">
-        <img src="images/bjglassesImages/blackBackground.jpg" alt="Placeholder 1">
-        <img src="images/bjglassesImages/mask.png" alt="Placeholder 2">
-        <img src="images/bjglassesImages/cropped.png" alt="Placeholder 3">
-        <img src="images/bjglassesImages/scene.jpg" alt="Placeholder 4">
+    <p style="font-size: 1.2rem; color: #888;">Real-time computer vision and synthetic data pipeline for multi-deck card tracking.</p>
+
+    <div class="hero-content">
+      <div class="image-grid">
+        <img src="images/bjglassesImages/blackBackground.jpg" alt="Raw input on black background">
+        <img src="images/bjglassesImages/mask.png" alt="Binary mask generation">
+        <img src="images/bjglassesImages/cropped.png" alt="Perspective corrected card">
+        <img src="images/bjglassesImages/scene.jpg" alt="Final synthetic training scene">
       </div>
 
-      <!-- Text -->
-      <div class="text-column">
-        <h2></h2>
-        <p>
-          
-        </p>
-
-        <h2>Key Details</h2>
+      <div class="summary-text">
+        <h3>Project Objective</h3>
+        <p>To develop a robust computer vision system capable of identifying playing cards under heavy occlusion and varied lighting, ultimately providing real-time Expected Value (EV) calculations for Blackjack.</p>
+        
+        <h3>Key Tech</h3>
         <ul>
-          <li></li>
+          <li>OpenCV (Otsu's, Homography)</li>
+          <li>PyTorch & YOLOv8/v11</li>
+          <li>Synthetic Data Generation</li>
+          <li>Linear Regression (L2 Fitting)</li>
         </ul>
       </div>
     </div>
+
+    <hr style="border: 0; border-top: 1px solid #333;">
+
+    <div class="tech-section">
+      <h2>1. Card Extraction and Normalization</h2>
+      <p>This pipeline isolates individual cards from a raw dataset to create standardized digital assets. By converting physical cards into high-fidelity "canonical" views, I established a clean foundation for the synthetic generation stage.</p>
+      
+      <h3>Segmentation via Otsu’s Thresholding</h3>
+      <p>To isolate the card from a dark background, I implemented Otsu’s Binarization. This method automatically calculates the optimal pixel intensity threshold, resulting in a boundary significantly smoother than a standard Canny contour processed via approxPolyDP.</p>
+
+      <h3>Geometric Line-Fitting & Virtual Corners</h3>
+      <p>Rather than relying on noisy contour corners, the pipeline samples points along the four edges and fits mathematical lines using Linear Regression (L2 Distance). The true corners are found by calculating the intersections of these four lines, allowing the system to find perfect corners even if the physical card is rounded or damaged.</p>
+
+      <h3>Perspective Correction</h3>
+      <p>Using the four calculated corners, I applied a Homography Matrix to "un-warp" the image. This transforms the tilted perspective of the photo into a flat, top-down view with a standardized aspect ratio.</p>
+    </div>
+
+    <div class="tech-section">
+      <h2>2. Synthetic Card Dataset Generation</h2>
+      <p>To train a model for real-world casino environments, I built a pipeline to produce realistic scenes with accurate segmentation labels under heavy occlusion and perspective distortion.</p>
+
+      <h3>Geometric & Sensor Augmentation</h3>
+      <p>Cards undergo randomized scaling, rotation, and perspective warping. To improve generalization, I applied appearance augmentations including specular glare, lighting gradients, motion blur, and HSV color jitter.</p>
+
+      <h3>Explicit Occlusion Handling</h3>
+      <p>Half of the scenes are generated with high occlusion. For each card, a visible mask is computed by subtracting the masks of cards layered above it. Only visible pixels are blended into the final scene using feathered alpha blending to ensure label consistency.</p>
+    </div>
+
+    <div class="tech-section">
+      <h2>3. Inference Strategy: Solving Multi-Deck Ambiguity</h2>
+      <p>Standard hobbyist projects rely on "pip" detection, but this fails in 6-deck Blackjack where identical cards frequently overlap. My objective was to build a system robust enough for professional environments.</p>
+
+      <h3>The Pip Problem</h3>
+      <p>Relying on corner pips introduces two major failures: if the pips are covered, the model loses the card; and if two identical pips are adjacent, the model cannot distinguish between one card or two stacked cards.</p>
+
+      <h3>Architectural Evolution</h3>
+      <ul>
+        <li><strong>Iteration 1 (Bounding Boxes):</strong> Failed in fanned arrangements as boxes encompassed too much of neighboring cards.</li>
+        <li><strong>Iteration 2 (Instance Segmentation):</strong> Transitioned to pixel-perfect masks, allowing the model to distinguish contrast between overlapping white-on-white borders.</li>
+        <li><strong>Iteration 3 (Two-Stage Classification):</strong> Experimented with using YOLO for region proposals and a ResNet-based CNN for classification.</li>
+      </ul>
+
+      <h3>Final Implementation & Next Steps</h3>
+      <p>The current one-shot approach achieves real-time inference on M-series MacBooks. Future work involves expanding to 52 classes and implementing Pose Detection to infer corner locations under total occlusion.</p>
+    </div>
+
   </div>
 </body>
 </html>
