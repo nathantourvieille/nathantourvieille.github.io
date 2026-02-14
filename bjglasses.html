@@ -6,21 +6,20 @@
   <title>Blackjack Glasses | Computer Vision Portfolio</title>
   <style>
     body {
-      background-color: #1a1a1a; /* Slightly deeper dark mode */
+      background-color: #1a1a1a;
       color: #e0e0e0;
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Inter', -apple-system, Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
 
-    /* Professional Navigation */
+    /* Navigation */
     .header {
       background-color: #222;
       padding: 15px 40px;
       display: flex;
       justify-content: flex-end;
-      align-items: center;
       border-bottom: 1px solid #333;
     }
 
@@ -28,71 +27,67 @@
       text-decoration: none;
       color: #bbb;
       font-size: 18px;
-      font-weight: 500;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
 
-    .header a:hover {
-      color: #007BFF;
-    }
+    .header a:hover { color: #007BFF; }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
-    h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
-    h2 { font-size: 1.8rem; color: #007BFF; margin-top: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-    h3 { font-size: 1.3rem; color: #fff; margin-top: 25px; }
+    h1 { font-size: 3rem; margin-bottom: 10px; color: #fff; }
+    .subtitle { font-size: 1.2rem; color: #888; margin-bottom: 60px; }
 
-    /* Top Section: Image Grid and Summary */
-    .hero-content {
+    /* Layout Sections */
+    .project-section {
       display: flex;
-      gap: 30px;
-      margin-bottom: 60px;
+      gap: 50px;
+      margin-bottom: 100px;
+      align-items: flex-start;
     }
 
-    .image-grid {
-      flex: 1.5;
+    .project-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .text-column { flex: 1.2; }
+    .image-column { flex: 0.8; }
+
+    h2 { font-size: 2rem; color: #007BFF; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+    h3 { font-size: 1.3rem; color: #fff; margin-top: 25px; margin-bottom: 10px; }
+
+    p { margin-bottom: 20px; text-align: justify; color: #ccc; }
+
+    /* Extraction Grid for 3 images */
+    .extraction-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 15px;
     }
+    .extraction-grid img:first-child { grid-column: span 2; }
 
-    .image-grid img {
+    img {
       width: 100%;
       border-radius: 8px;
       border: 1px solid #444;
-      transition: transform 0.3s;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    .image-grid img:hover { transform: scale(1.02); }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 12px; color: #ccc; }
 
-    .summary-text {
-      flex: 1;
-      background: #252525;
-      padding: 25px;
-      border-radius: 12px;
-      height: fit-content;
+    .full-width-text {
+      max-width: 900px;
+      margin: 0 auto;
     }
-
-    /* Technical Breakdown Sections */
-    .tech-section {
-      margin-top: 50px;
-    }
-
-    .tech-section p {
-      color: #ccc;
-      margin-bottom: 15px;
-    }
-
-    ul { padding-left: 20px; color: #ccc; }
-    li { margin-bottom: 10px; }
 
     @media (max-width: 900px) {
-      .hero-content { flex-direction: column; }
-      .image-grid { grid-template-columns: 1fr; }
+      .project-section, .project-section:nth-child(even) { flex-direction: column; }
+      .image-column { width: 100%; order: -1; } /* Image shows first on mobile */
     }
   </style>
 </head>
@@ -104,73 +99,95 @@
 
   <div class="container">
     <h1>Blackjack Glasses</h1>
-    <p style="font-size: 1.2rem; color: #888;">Real-time computer vision and synthetic data pipeline for multi-deck card tracking.</p>
+    <p class="subtitle">An end-to-end computer vision pipeline for real-time card tracking and EV analysis.</p>
 
-    <div class="hero-content">
-      <div class="image-grid">
-        <img src="images/bjglassesImages/blackBackground.jpg" alt="Raw input on black background">
-        <img src="images/bjglassesImages/mask.png" alt="Binary mask generation">
-        <img src="images/bjglassesImages/cropped.png" alt="Perspective corrected card">
-        <img src="images/bjglassesImages/scene.jpg" alt="Final synthetic training scene">
+    <div class="project-section">
+      <div class="text-column">
+        <h2>Card Extraction and Normalization Pipeline</h2>
+        <p>This initial pipeline isolates individual cards from a raw dataset to create standardized clean card crops.</p>
+
+        <h3>Segmentation via Otsu’s Thresholding</h3>
+        <p>To isolate the card from a dark background, I implemented Otsu’s Binarization. This method provided superior robustness compared to basic contour detection by automatically calculating the optimal pixel intensity threshold to separate the subject from background noise. The resulting boundary is significantly smoother than a standard Canny contour processed via approxPolyDP.</p>
+
+        <h3>Geometric Line-Fitting</h3>
+        <p>Rather than relying on noisy or rounded contour corners, the pipeline samples points along the four edges of the card. It fits a mathematical line to each side using Linear Regression (L2 Distance), ensuring the edges are perfectly straight and mathematically defined.</p>
+
+        <h3>Virtual Corner Intersection</h3>
+        <p>The true corners are identified by calculating the intersections of these four lines. This allows the system to determine where the corners would be if the physical card didn’t have rounded edges.</p>
+
+        <h3>Perspective Correction</h3>
+        <p>Using the four calculated corners, I applied a Homography Matrix to rectify the image. This transforms the tilted perspective of the original photo into a flat, top-down view with a standardized aspect ratio.</p>
+
+        <h3>Alpha Channel Masking and Cleanup</h3>
+        <p>Finally, a synthetic card-shaped mask is generated and overlaid. By eroding the mask by a few pixels, the process crops out residual background and edge artifacts. This results in a clean digital asset ready for scene composition.</p>
       </div>
 
-      <div class="summary-text">
-        <h3>Project Objective</h3>
-        <p>To develop a robust computer vision system capable of identifying playing cards under heavy occlusion and varied lighting, ultimately providing real-time Expected Value (EV) calculations for Blackjack.</p>
-        
-        <h3>Key Tech</h3>
+      <div class="image-column">
+        <div class="extraction-grid">
+          <img src="images/bjglassesImages/blackBackground.jpg" alt="Raw Input">
+          <img src="images/bjglassesImages/mask.png" alt="Otsu Binarization">
+          <img src="images/bjglassesImages/cropped.png" alt="Canonical Asset">
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <div class="image-column">
+        <img src="images/bjglassesImages/scene.jpg" alt="Synthetic Scene with Occlusions">
+      </div>
+      <div class="text-column">
+        <h2>Synthetic Card Dataset Generation Pipeline</h2>
+        <p>This pipeline creates complex scenes composed of multiple cards. As I just wanted to make a basic prototype, I only made scenes with Aces and Kings, as well as the back side of the card from two different decks. It is designed to produce reasonable training data with accurate segmentation labels under heavy occlusion, perspective distortion, and challenging lighting conditions.</p>
+
+        <h3>1. Geometric Transformations</h3>
+        <p>Cards first undergo randomized geometric augmentation to simulate real-world viewpoints:</p>
         <ul>
-          <li>OpenCV (Otsu's, Homography)</li>
-          <li>PyTorch & YOLOv8/v11</li>
-          <li>Synthetic Data Generation</li>
-          <li>Linear Regression (L2 Fitting)</li>
+          <li>Scaling</li>
+          <li>Rotation</li>
+          <li>Perspective warping</li>
         </ul>
+        <p>All geometric operations are applied identically to both the RGB image and its mask to guarantee exact alignment.</p>
+
+        <h3>2. Surface and Sensor Augmentations</h3>
+        <p>To improve model generalization, a series of appearance-based augmentations are applied: Specular glare and lighting gradients, motion and Gaussian blur, brightness and contrast variation, HSV color jitter, and sensor noise. These effects simulate camera artifacts while preserving the integrity of the underlying segmentation mask.</p>
+
+        <h3>3. Scene Composition with Explicit Occlusion Handling</h3>
+        <p>Cards are placed onto high-resolution random backgrounds. Since Blackjack involves frequent overlaps, half of the generated scenes feature high occlusion fanned configurations. Each card is assigned a depth, and occlusions are handled explicitly:</p>
+        <ul>
+          <li>For each card, a visible mask is computed by subtracting the masks of cards layered above it.</li>
+          <li>Only the visible pixels of each card are blended into the final scene.</li>
+          <li>Feathered alpha blending is applied to produce realistic edges.</li>
+        </ul>
+
+        <h3>4. Segmentation and Bounding Box Extraction</h3>
+        <p>After compositing the scene, visible masks are converted into simplified polygon contours for compact representation. The pipeline then generates a standardized text file containing all classes and corresponding polygons present in the scene.</p>
       </div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #333;">
+    <div class="full-width-text">
+      <h2>Inference Strategy: Solving the Multi-Deck Ambiguity</h2>
+      <p>While all similar projects I found online detect corner pips, this method would likely not be robust enough for a real casino environment. My objective was to build a system that would handle edge cases as the room for error in Blackjack card counting is close to none.</p>
 
-    <div class="tech-section">
-      <h2>1. Card Extraction and Normalization</h2>
-      <p>This pipeline isolates individual cards from a raw dataset to create standardized digital assets. By converting physical cards into high-fidelity "canonical" views, I established a clean foundation for the synthetic generation stage.</p>
-      
-      <h3>Segmentation via Otsu’s Thresholding</h3>
-      <p>To isolate the card from a dark background, I implemented Otsu’s Binarization. This method automatically calculates the optimal pixel intensity threshold, resulting in a boundary significantly smoother than a standard Canny contour processed via approxPolyDP.</p>
-
-      <h3>Geometric Line-Fitting & Virtual Corners</h3>
-      <p>Rather than relying on noisy contour corners, the pipeline samples points along the four edges and fits mathematical lines using Linear Regression (L2 Distance). The true corners are found by calculating the intersections of these four lines, allowing the system to find perfect corners even if the physical card is rounded or damaged.</p>
-
-      <h3>Perspective Correction</h3>
-      <p>Using the four calculated corners, I applied a Homography Matrix to "un-warp" the image. This transforms the tilted perspective of the photo into a flat, top-down view with a standardized aspect ratio.</p>
-    </div>
-
-    <div class="tech-section">
-      <h2>2. Synthetic Card Dataset Generation</h2>
-      <p>To train a model for real-world casino environments, I built a pipeline to produce realistic scenes with accurate segmentation labels under heavy occlusion and perspective distortion.</p>
-
-      <h3>Geometric & Sensor Augmentation</h3>
-      <p>Cards undergo randomized scaling, rotation, and perspective warping. To improve generalization, I applied appearance augmentations including specular glare, lighting gradients, motion blur, and HSV color jitter.</p>
-
-      <h3>Explicit Occlusion Handling</h3>
-      <p>Half of the scenes are generated with high occlusion. For each card, a visible mask is computed by subtracting the masks of cards layered above it. Only visible pixels are blended into the final scene using feathered alpha blending to ensure label consistency.</p>
-    </div>
-
-    <div class="tech-section">
-      <h2>3. Inference Strategy: Solving Multi-Deck Ambiguity</h2>
-      <p>Standard hobbyist projects rely on "pip" detection, but this fails in 6-deck Blackjack where identical cards frequently overlap. My objective was to build a system robust enough for professional environments.</p>
-
-      <h3>The Pip Problem</h3>
-      <p>Relying on corner pips introduces two major failures: if the pips are covered, the model loses the card; and if two identical pips are adjacent, the model cannot distinguish between one card or two stacked cards.</p>
-
-      <h3>Architectural Evolution</h3>
+      <h3>The Pip Problem and Multi-Deck Collision</h3>
+      <p>Identifying cards solely by their pips introduces two potentially significant logic failures:</p>
       <ul>
-        <li><strong>Iteration 1 (Bounding Boxes):</strong> Failed in fanned arrangements as boxes encompassed too much of neighboring cards.</li>
-        <li><strong>Iteration 2 (Instance Segmentation):</strong> Transitioned to pixel-perfect masks, allowing the model to distinguish contrast between overlapping white-on-white borders.</li>
-        <li><strong>Iteration 3 (Two-Stage Classification):</strong> Experimented with using YOLO for region proposals and a ResNet-based CNN for classification.</li>
+        <li><strong>Occlusion Vulnerability:</strong> If pips are covered by another card or a hand, the model loses the card entirely, even if the majority of the card body is visible.</li>
+        <li><strong>Identity Ambiguity:</strong> In a standard six-deck shoe, multiple identical cards often overlap. A pip-only detector seeing two identical pips in close proximity cannot reliably determine if it is observing one card or two cards stacked.</li>
       </ul>
 
-      <h3>Final Implementation & Next Steps</h3>
-      <p>The current one-shot approach achieves real-time inference on M-series MacBooks. Future work involves expanding to 52 classes and implementing Pose Detection to infer corner locations under total occlusion.</p>
+      <h3>Architectural Evolution</h3>
+      <p>I pivoted towards identifying and tracking the entire card geometry through several iterations:</p>
+      <ul>
+        <li><strong>Iteration 1 (YOLO Bounding Boxes):</strong> Initial tests used standard bounding boxes. However, in high occlusion arrangements, a rectangular box for one card could often encompass its neighbor, causing ground truth noise.</li>
+        <li><strong>Iteration 2 (Instance Segmentation):</strong> Transitioned to Instance Segmentation. This allowed the polygon label to represent only the visible part of the card. The model learned to distinguish the subtle contrast between overlapping borders.</li>
+        <li><strong>Iteration 3 (Two-Stage Classification):</strong> Experimented with a modular approach: using a YOLO segmentation model trained on a "card" class to generate region proposals, passing those crops into a custom ResNet-based CNN in PyTorch.</li>
+      </ul>
+
+      <h3>Final Implementation: The One-Shot Approach</h3>
+      <p>The one-shot instance segmentation approach proved much more effective. Using a test set of Aces and Kings, the model achieved: <strong>Real-Time Inference</strong> on MacBook hardware, <strong>High Precision</strong> under heavy occlusion/blur, and <strong>Tracking IDs</strong> based on temporal presence.</p>
+
+      <h3>Next Steps</h3>
+      <p>The next phase involves expanding to the full 52-card deck. I will monitor for classification confusion between similar ranks like 6s and 9s. If resolution limits hinder the one-shot approach, I will revisit the two-stage CNN architecture. I am also exploring pose detection to infer corner locations under total occlusion and doing a deep dive into improving tracking robustness to avoid catastrophic ID switches.</p>
     </div>
 
   </div>
