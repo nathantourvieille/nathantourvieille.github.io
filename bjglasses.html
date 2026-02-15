@@ -99,12 +99,21 @@
 
   <div class="container">
     <h1>Blackjack Glasses</h1>
-    <p class="subtitle">An end-to-end computer vision pipeline for real-time card tracking and EV analysis.</p>
+    <p class="tagline">Developing a wearable, robust computer vision system capable of identifying and tracking playing cards under heavy occlusion and varied lighting, ultimately providing real-time ideal Blackjack strategy based on highest expedted value.</p>
+
+    <div class="intro-block">
+      <h2>Project Introduction</h2>
+      <p>Blackjack is unique in the casino world because it is the only game that can be mathematically beaten over the long run. Professional players achieve this through card counting, assigning a score to every card to maintain a "running count." In a standard Hi-Lo system, Aces through 10s are valued at -1, 2s through 6s at +1, and the rest at 0.</p>
+      
+      <p>My goal for this project was to go beyond simple counting by building a system that keeps track of every single card played. With this complete data, I can construct an algorithm to calculate the highest possible expected value (EV) for any given hand.</p>
+      
+      <p>The foundation of this project is a custom computer vision system. For the strategy to work, the system must identify the suit and rank of all visible cards and track them across frames to ensure no card is overcounted. This CV pipeline is built on three core components:</p>
+    </div>
 
     <div class="project-section">
       <div class="text-column">
         <h2>Card Extraction and Normalization Pipeline</h2>
-        <p>This initial pipeline isolates individual cards from a raw dataset to create standardized clean card crops.</p>
+        <p>This initial pipeline isolates individual cards from a raw dataset to create standardized clean card crops. These card crops will then be used to generate scenes with multiple cards for training.</p>
 
         <h3>Segmentation via Otsu’s Thresholding</h3>
         <p>To isolate the card from a dark background, I implemented Otsu’s Binarization. This method provided superior robustness compared to basic contour detection by automatically calculating the optimal pixel intensity threshold to separate the subject from background noise. The resulting boundary is significantly smoother than a standard Canny contour processed via approxPolyDP.</p>
@@ -137,7 +146,7 @@
       </div>
       <div class="text-column">
         <h2>Synthetic Card Dataset Generation Pipeline</h2>
-        <p>This pipeline creates complex scenes composed of multiple cards. As I just wanted to make a basic prototype, I only made scenes with Aces and Kings, as well as the back side of the card from two different decks. It is designed to produce reasonable training data with accurate segmentation labels under heavy occlusion, perspective distortion, and challenging lighting conditions.</p>
+        <p>This pipeline creates complex scenes composed of multiple cards. As I just wanted to make a basic prototype, I only made scenes with Aces and Kings, as well as the back side of the card from three different decks. It is designed to produce reasonable training data with accurate segmentation labels under heavy occlusion, perspective distortion, and challenging lighting conditions.</p>
 
         <h3>1. Geometric Transformations</h3>
         <p>Cards first undergo randomized geometric augmentation to simulate real-world viewpoints:</p>
