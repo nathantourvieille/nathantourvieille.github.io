@@ -149,10 +149,11 @@
     <div class="project-section">
       <div class="image-column">
         <img src="images/bjglassesImages/scene.jpg" alt="Synthetic Scene with Occlusions">
+        <img src="images/bjglassesImages/scene2.jpg" alt="Syn Scene">
       </div>
       <div class="text-column">
         <h2>Synthetic Card Dataset Generation Pipeline</h2>
-        <p>This pipeline creates complex scenes composed of multiple cards. As I just wanted to make a basic prototype, I only made scenes with Aces and Kings, as well as the back side of the card from three different decks. It is designed to produce reasonable training data with accurate segmentation labels under heavy occlusion, perspective distortion, and challenging lighting conditions.</p>
+        <p>This pipeline creates complex scenes with harsh conditions composed of multiple cards along with a txt file with the ground truth. As I just wanted to make a basic prototype, I only made scenes with Aces and Kings, as well as the back side of the card from three different decks.</p>
 
         <h3>1. Geometric Transformations</h3>
         <p>Cards first undergo randomized geometric augmentation to simulate real-world viewpoints:</p>
@@ -181,7 +182,7 @@
 
     <div class="full-width-text">
       <h2>Machine Learning Model</h2>
-      <p>While all similar projects I found online detect corner pips, this method would likely not be robust enough for a real casino environment. My objective was to build a system that would handle edge cases as the room for error in Blackjack card counting is close to none.</p>
+      <p>While all similar projects I found online detect corner pips (the small number and suit in the top left and bottom right corner), this method would likely not be robust enough for a real casino environment. My objective was to build a system that would handle edge cases as the room for error in Blackjack card counting is close to none.</p>
 
       <h3>The Pip Problem and Multi-Deck Collision</h3>
       <p>Identifying cards solely by their pips introduces two potentially significant logic failures:</p>
