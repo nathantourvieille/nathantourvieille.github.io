@@ -108,6 +108,12 @@
       <p>My goal for this project was to go beyond simple counting by building a system that keeps track of every single card played. With this complete data, I can construct an algorithm to calculate the highest possible expected value (EV) for any given hand.</p>
       
       <p>The foundation of this project is a custom computer vision system. For the strategy to work, the system must identify the suit and rank of all visible cards and track them across frames to ensure no card is overcounted. This CV pipeline is built on three core components:</p>
+      
+      <ul class="intro-list">
+        <li><strong>Card Extraction and Noralization:</strong> A preprocessing pipeline that takes real-world card images and converts them into standardized card crops.</li>
+        <li><strong>Synthetic Scene Generation:</strong> A script that uses those crops to generate thousands of photorealistic training images with automatic labeling.</li>
+        <li><strong>Machine Learning Model:</strong> A model trained on the synthetic data to perform real-time detection, classification, and tracking in live environments.</li>
+      </ul>
     </div>
 
     <div class="project-section">
@@ -174,7 +180,7 @@
     </div>
 
     <div class="full-width-text">
-      <h2>Inference Strategy: Solving the Multi-Deck Ambiguity</h2>
+      <h2>Machine Learning Model</h2>
       <p>While all similar projects I found online detect corner pips, this method would likely not be robust enough for a real casino environment. My objective was to build a system that would handle edge cases as the room for error in Blackjack card counting is close to none.</p>
 
       <h3>The Pip Problem and Multi-Deck Collision</h3>
